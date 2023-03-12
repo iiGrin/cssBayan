@@ -1,38 +1,63 @@
 html {
     height: 100vh;
     background-color: rgb(151, 175, 182);
-  }
-  
-  .memes-container {
+    font-family: 'Bradley Hand', cursive;
+}
+
+.memes-container {
     width: 50%;
     margin: 5vh auto;
     display: flex;
     flex-direction: column;
-  }
-  .mem-item {
+}
+
+@media (max-width: 1300px) {
+    .memes-container {
+        width: 55%;
+        margin: 5vh auto;
+    }
+}
+
+@media (max-width: 820px) {
+    .memes-container {
+        width: 70%;
+        margin: 5vh auto;
+    }
+}
+
+.mem-item {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-top: thin solid rgb(36, 72, 83);
-  }
-  
-  input {
+}
+
+input {
     display: none;
-  }
-  
-  input:checked + label {
+}
+
+input:checked+label {
     max-height: 100vh;
     color: rgb(226, 0, 0);
-  }
-  
-  input:checked + label .title img,
-  label:hover .title img {
-    transform: rotate(45deg);
-  }
-  
-  label {
-    font-family: 'Bradley Hand', cursive;
+}
+
+input:checked+label .title img {
+    transform: rotate(225deg);
+    transition: 0.5s transform;
+}
+
+label .title img {
+    transition: 0.5s transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    label:hover .title img {
+        transform: rotate(225deg);
+    }
+}
+
+label {
     color: rgb(0, 12, 122);
     font-size: 1.2em;
     cursor: pointer;
@@ -41,52 +66,114 @@ html {
     max-height: 3em;
     overflow: hidden;
     transition: 0.7s ease-in-out;
-  }
-  
-  label:hover {
-    max-height: 60vh;
-    transition: 0.7s ease-out;
-  }
+}
 
-  .memes-container:hover label {
-    color: rgb(226, 0, 0);
-  }
-  
-  .title img {
-    opacity: 0;
-  }
-  
-  .memes-container:hover .title img {
-    opacity: 1;
-  }
-  
-  .title {
+@media (hover: none) and (pointer: coarse) {
+    label {
+        transition: 0.7s max-height ease-in-out -0.35s;
+    }
+
+    input:checked+label {
+        max-height: 90vh;
+        transition: 0.7s max-height ease-in-out;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    label:hover {
+        max-height: 90vh;
+        transition: 0.7s ease-out;
+    }
+
+    .memes-container:hover label {
+        color: rgb(196, 0, 0);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .title img {
+        opacity: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .memes-container:hover .title img {
+        opacity: 1;
+    }
+}
+
+.title {
     display: flex;
     justify-content: center;
-  }
-  
-  .mem-holder {
+}
+
+.mem-holder {
     display: flex;
     justify-content: center;
     transform: scale(0);
     transition: 0.1s;
-  }
-  
-  label:hover .mem-holder,
-  input:checked + label .mem-holder {
+}
+
+@media (hover: hover) and (pointer: fine) {
+    label:hover .mem-holder {
+        transition: 0.35s ease-out;
+        transform: scale(1);
+    }
+}
+
+input:checked+label .mem-holder {
     transition: 0.35s ease-out;
     transform: scale(1);
-  }
+}
 
-  label:active {
-    transition: none;
-    color: rgb(12, 71, 0)!important;
-    transition: 0.4s;
-    filter: opacity(0.5);
-  }
+@media (max-width: 320px) {
+    .memes-container {
+        width: 100%;
+        margin: 0 auto;
+    }
 
-  .mem-holder img {
+    h1 {
+        margin: 0.2em 0;
+        font-size: 1.5em;
+    }
+
+    label {
+        font-size: 1em;
+        max-height: 2.25em;
+    }
+
+    p {
+        margin: 0.75em 0;
+    }
+
+    input:checked+label {
+        max-height: 100vh;
+    }
+
+    .mem-holder {
+        height: 50vh;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    label:active {
+        transition: none;
+        color: blue !important;
+        transition: 0.4s;
+        filter: opacity(0.5);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .title:active {
+        transition: none;
+        transition: 0.4s;
+        filter: opacity(0.5);
+    }
+}
+
+.mem-holder img {
     width: 500px;
     height: 500px;
     padding-bottom: 10vh;
-  }
+}
