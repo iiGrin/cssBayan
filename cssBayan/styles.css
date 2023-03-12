@@ -1,0 +1,47 @@
+html {
+    height: 100vh;
+    background-color: rgb(151, 175, 182);
+  }
+  
+  .memes-container {
+    width: 50%;
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .mem-item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: thin solid rgb(36, 72, 83);
+  }
+  
+  input {
+    display: none;
+  }
+  
+  input:checked + label {
+    max-height: 100vh;
+  }
+  
+  label {
+    font-family: 'Bradley Hand', cursive;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    max-height: 3em;
+    overflow: hidden;
+    transition: 0.7s ease-in-out;
+  }
+  
+  label:hover {
+    max-height: 60vh;
+    transition: 0.7s ease-out;
+  }
+  
+  .mem-holder {
+    display: flex;
+    justify-content: center;
+  }
