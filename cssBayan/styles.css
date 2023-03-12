@@ -1,7 +1,11 @@
 html {
     height: 100vh;
-    background-color: rgb(151, 175, 182);
     font-family: 'Bradley Hand', cursive;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    background-color: rgb(151, 175, 182);  }
 }
 
 .memes-container {
@@ -14,13 +18,6 @@ html {
 @media (max-width: 1300px) {
     .memes-container {
         width: 55%;
-        margin: 5vh auto;
-    }
-}
-
-@media (max-width: 820px) {
-    .memes-container {
-        width: 70%;
         margin: 5vh auto;
     }
 }
@@ -43,7 +40,7 @@ input:checked+label {
 }
 
 input:checked+label .title img {
-    transform: rotate(225deg);
+    transform: rotate(135deg);
     transition: 0.5s transform;
 }
 
@@ -53,7 +50,7 @@ label .title img {
 
 @media (hover: hover) and (pointer: fine) {
     label:hover .title img {
-        transform: rotate(225deg);
+        transform: rotate(135deg);
     }
 }
 
@@ -114,6 +111,16 @@ label {
     transition: 0.1s;
 }
 
+.mem-holder {
+    max-height: 40vh;
+  }
+
+  .mem-holder img {
+    max-height: inherit;
+    max-width: 100%;
+    box-shadow: inset;
+  }
+
 @media (hover: hover) and (pointer: fine) {
     label:hover .mem-holder {
         transition: 0.35s ease-out;
@@ -125,6 +132,45 @@ input:checked+label .mem-holder {
     transition: 0.35s ease-out;
     transform: scale(1);
 }
+
+@media (max-width: 820px) {
+    .memes-container {
+      width: 70%;
+      margin: 5vh auto;
+    }
+  
+    h1 {
+      margin: 0.3em 0;
+      font-size: 1.75em;
+    }
+  
+    label {
+      font-size: 1.1em;
+      max-height: 2.55em;
+    }
+  
+    p {
+      margin: 0.85em 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .memes-container {
+      width: 85%;
+      margin: 2vh auto;
+    }
+
+    .mem-holder {
+      max-height: 40vh;
+    }
+  }
+  
+  @media (max-width: 340px) {
+    label {
+      font-size: 1em;
+    }
+  }
+  
 
 @media (max-width: 320px) {
     .memes-container {
@@ -138,7 +184,6 @@ input:checked+label .mem-holder {
     }
 
     label {
-        font-size: 1em;
         max-height: 2.25em;
     }
 
@@ -148,10 +193,6 @@ input:checked+label .mem-holder {
 
     input:checked+label {
         max-height: 100vh;
-    }
-
-    .mem-holder {
-        height: 50vh;
     }
 }
 
