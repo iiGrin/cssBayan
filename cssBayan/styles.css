@@ -112,13 +112,12 @@ label {
 }
 
 .mem-holder {
-    max-height: 40vh;
+    max-height: 90vh;
   }
 
   .mem-holder img {
-    max-height: inherit;
     max-width: 100%;
-    box-shadow: inset;
+    padding-bottom: 10vh;
   }
 
 @media (hover: hover) and (pointer: fine) {
@@ -128,7 +127,7 @@ label {
     }
 }
 
-input:checked+label .mem-holder {
+input:checked + label .mem-holder {
     transition: 0.35s ease-out;
     transform: scale(1);
 }
@@ -178,20 +177,25 @@ input:checked+label .mem-holder {
         margin: 0 auto;
     }
 
+    .memes-container .mem-holder img {
+        width: 150px;
+        height: 150px;
+    }
+
     h1 {
         margin: 0.2em 0;
         font-size: 1.5em;
     }
 
     label {
-        max-height: 2.25em;
+        max-height: 3.75em;
     }
 
     p {
         margin: 0.75em 0;
     }
 
-    input:checked+label {
+    input:checked + label {
         max-height: 100vh;
     }
 }
@@ -214,7 +218,7 @@ input:checked+label .mem-holder {
 }
 
 .mem-holder img {
-    width: 500px;
-    height: 500px;
-    padding-bottom: 10vh;
+    width: 300px;
+    height: 300px;
+    padding-bottom: 5vh;
 }
