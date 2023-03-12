@@ -23,10 +23,17 @@ html {
   
   input:checked + label {
     max-height: 100vh;
+    color: rgb(226, 0, 0);
+  }
+  
+  input:checked + label .title img,
+  label:hover .title img {
+    transform: rotate(45deg);
   }
   
   label {
     font-family: 'Bradley Hand', cursive;
+    color: rgb(0, 12, 122);
     font-size: 1.2em;
     cursor: pointer;
     display: block;
@@ -40,8 +47,46 @@ html {
     max-height: 60vh;
     transition: 0.7s ease-out;
   }
+
+  .memes-container:hover label {
+    color: rgb(226, 0, 0);
+  }
+  
+  .title img {
+    opacity: 0;
+  }
+  
+  .memes-container:hover .title img {
+    opacity: 1;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: center;
+  }
   
   .mem-holder {
     display: flex;
     justify-content: center;
+    transform: scale(0);
+    transition: 0.1s;
+  }
+  
+  label:hover .mem-holder,
+  input:checked + label .mem-holder {
+    transition: 0.35s ease-out;
+    transform: scale(1);
+  }
+
+  label:active {
+    transition: none;
+    color: rgb(12, 71, 0)!important;
+    transition: 0.4s;
+    filter: opacity(0.5);
+  }
+
+  .mem-holder img {
+    width: 500px;
+    height: 500px;
+    padding-bottom: 10vh;
   }
